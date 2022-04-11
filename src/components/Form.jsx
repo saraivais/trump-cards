@@ -21,47 +21,59 @@ class Form extends React.Component {
     return (
       <>
         <GenericImput
+          inputName="Name"
           valueShown={ cardName }
           changeFunc={ onInputChange }
           inputType="text"
           testId="name-input"
         />
         <GenericImput
+          inputName="Description"
           valueShown={ cardDescription }
           changeFunc={ onInputChange }
           inputType="textarea"
           testId="description-input"
         />
         <GenericImput
+          inputName="Attr1"
           valueShown={ cardAttr1 }
           changeFunc={ onInputChange }
           inputType="number"
           testId="attr1-input"
         />
         <GenericImput
+          inputName="Attr2"
           valueShown={ cardAttr2 }
           changeFunc={ onInputChange }
           inputType="number"
           testId="attr2-input"
         />
         <GenericImput
+          inputName="Attr3"
           valueShown={ cardAttr3 }
           changeFunc={ onInputChange }
           inputType="number"
           testId="attr3-input"
         />
         <GenericImput
+          inputName="Image"
           valueShown={ cardImage }
           changeFunc={ onInputChange }
           inputType="text"
           testId="image-input"
         />
-        <select data-testid="rare-input" value={ cardRare } onChange={ onInputChange }>
+        <select
+          name="Rarity"
+          data-testid="rare-input"
+          value={ cardRare }
+          onChange={ onInputChange }
+        >
           <option value="normal">Normal</option>
           <option value="raro">Raro</option>
           <option value="muito raro">Muito Raro</option>
         </select>
         <input
+          name="Trunfo"
           type="checkbox"
           data-testid="trunfo-input"
           checked={ cardTrunfo }
