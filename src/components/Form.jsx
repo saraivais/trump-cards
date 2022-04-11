@@ -17,7 +17,7 @@ class Form extends React.Component {
           <option value="muito raro">Muito Raro</option>
         </select>
         <GenericImput inputType="checkbox" testId="trunfo-input" />
-        <button data-testid="save-button">Salvar</button>
+        <button type="button" data-testid="save-button">Salvar</button>
       </>);
   }
 }
