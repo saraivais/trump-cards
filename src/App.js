@@ -3,9 +3,6 @@ import Form from './components/Form';
 import Card from './components/Card';
 import Deck from './components/Deck';
 
-const maxSum = 210;
-const maxAttr = 90;
-
 class App extends React.Component {
   constructor() {
     super();
@@ -24,8 +21,7 @@ class App extends React.Component {
     };
 
     this.onInputChange = this.onInputChange.bind(this);
-    this.checkFormCompletion = this.checkFormCompletion.bind(this);
-    this.xablau = this.xablau.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
   }
 
   // https://javascript.plainenglish.io/react-tips-async-and-setstate-cb539ad62135#:~:text=The%20setState%20method%20is%20the,creates%20a%20pending%20state%20transaction.
@@ -39,6 +35,8 @@ class App extends React.Component {
   }
 
   checkFormCompletion() {
+    const maxSum = 210;
+    const maxAttr = 90;
     const {
       Name,
       Description,
@@ -74,7 +72,7 @@ class App extends React.Component {
     // usar !every com todo mundo igual a true~
   }
 
-  xablau() {
+  saveCard() {
     const {
       Name,
       Description,
@@ -119,6 +117,26 @@ class App extends React.Component {
     // resetar tudo;
   }
 
+  deleteCard(nameToFind) {
+    const { createdCards } = this.state;
+    const elementFound = createdCards
+      .find((object) => object.Name === nameToFind);
+    const newDeck = createdCards.filter((allCards) => allCards !== elementFound);
+    this.setState(
+      () => ({ createdCards: newDeck }),
+      () => this.restoreTrunfo(),
+    );
+  }
+
+  restoreTrunfo() {
+    const { createdCards } = this.state;
+    if (!createdCards.find((card) => card.Trunfo === true)) {
+      this.setState({
+        hasTrunfo: false,
+      });
+    }
+  }
+
   render() {
     const {
       Name,
@@ -148,7 +166,7 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ ButtonOff }
-          onSaveButtonClick={ () => this.xablau() }
+          onSaveButtonClick={ () => this.saveCard() }
         />
         <Card
           cardName={ Name }
@@ -159,8 +177,10 @@ class App extends React.Component {
           cardImage={ Image }
           cardRare={ Rarity }
           cardTrunfo={ Trunfo }
+          isPreview
+          deleteBtn={ this.deleteCard }
         />
-        <Deck allCards={ createdCards } />
+        <Deck deleteFunc={ this.deleteCard } allCards={ createdCards } />
       </div>
     );
   }
