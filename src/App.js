@@ -12,9 +12,9 @@ class App extends React.Component {
     this.state = {
       Name: '',
       Description: '',
-      Attr1: '',
-      Attr2: '',
-      Attr3: '',
+      Attr1: 0,
+      Attr2: 0,
+      Attr3: 0,
       Image: '',
       Rarity: '',
       Trunfo: '',
@@ -30,26 +30,10 @@ class App extends React.Component {
   onInputChange({ target }) {
     const { name } = target;
     const value = (target.type === 'checkbox') ? target.checked : target.value;
-    this.setState({
-      [name]: value,
-    });
-    this.checkFormCompletion();
-  }
-
-  sum(num1, num2, num3) {
-    if ((num1 + num2 + num3) > maxSum) return true;
-    return false;
-  }
-
-  range(num1, num2, num3) {
-    if ((num1 > maxAttr) || (num2 > maxAttr) || (num3 > maxAttr)) return true;
-    return false;
-  }
-
-  verifyAttributes(num1, num2, num3) {
-    if (this.sum(num1, num2, num3) === true
-    && this.range(num1, num2, num3) === true) return true;
-    return false;
+    this.setState(
+      () => ({ [name]: value }),
+      () => this.checkFormCompletion(),
+    );
   }
 
   checkFormCompletion() {
@@ -63,15 +47,24 @@ class App extends React.Component {
       Rarity,
     } = this.state;
 
-    const fields = [
+    const checks = [
       !Name.length,
       !Description.length,
       !Image.length,
       !Rarity.length,
-      this.verifyAttributes(Attr1, Attr2, Attr3),
+      (Attr1 > maxAttr),
+      (Attr2 > maxAttr),
+      (Attr3 > maxAttr),
+      (Attr1 < 0),
+      (Attr2 < 0),
+      (Attr3 < 0),
+      ((parseInt(Attr1, 10) + parseInt(Attr2, 10) + parseInt(Attr3, 10)) > maxSum),
     ];
 
-    const result = !fields.every((field) => field === false);
+    const result = checks.some((check) => check === true);
+    console.log(checks);
+    console.log(result);
+
     this.setState({
       ButtonOff: result,
     });
@@ -109,11 +102,11 @@ class App extends React.Component {
       createdCards: [...createdCards, newCard],
       Name: '',
       Description: '',
-      Attr1: '',
-      Attr2: '',
-      Attr3: '',
+      Attr1: 0,
+      Attr2: 0,
+      Attr3: 0,
       Image: '',
-      Rarity: '',
+      Rarity: 'normal',
       Trunfo: '',
     });
     // guardar as info em um objeto dentro de um array~
