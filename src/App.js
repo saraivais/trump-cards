@@ -2,7 +2,6 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 
-// Iniciando projeto~
 const maxSum = 210;
 const maxAttr = 90;
 
@@ -18,6 +17,7 @@ class App extends React.Component {
       Image: '',
       Rarity: '',
       Trunfo: '',
+      hasTrunfo: false,
       ButtonOff: true,
       createdCards: [],
     };
@@ -27,6 +27,7 @@ class App extends React.Component {
     this.xablau = this.xablau.bind(this);
   }
 
+  // https://javascript.plainenglish.io/react-tips-async-and-setstate-cb539ad62135#:~:text=The%20setState%20method%20is%20the,creates%20a%20pending%20state%20transaction.
   onInputChange({ target }) {
     const { name } = target;
     const value = (target.type === 'checkbox') ? target.checked : target.value;
@@ -62,8 +63,6 @@ class App extends React.Component {
     ];
 
     const result = checks.some((check) => check === true);
-    console.log(checks);
-    console.log(result);
 
     this.setState({
       ButtonOff: result,
@@ -98,6 +97,12 @@ class App extends React.Component {
       Trunfo,
     };
 
+    if (newCard.Trunfo) {
+      this.setState({
+        hasTrunfo: true,
+      });
+    }
+
     this.setState({
       createdCards: [...createdCards, newCard],
       Name: '',
@@ -124,6 +129,7 @@ class App extends React.Component {
       Rarity,
       Trunfo,
       ButtonOff,
+      hasTrunfo,
     } = this.state;
     return (
       <div>
@@ -137,6 +143,7 @@ class App extends React.Component {
           cardImage={ Image }
           cardRare={ Rarity }
           cardTrunfo={ Trunfo }
+          hasTrunfo={ hasTrunfo }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ ButtonOff }
           onSaveButtonClick={ () => this.xablau() }
