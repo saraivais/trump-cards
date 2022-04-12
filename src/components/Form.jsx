@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import GenericImput from './GenericImput';
-// hasTrunfo, hasTrunfo: propTypes.bool.isRequired,
 
 class Form extends React.Component {
   render() {
@@ -17,6 +16,7 @@ class Form extends React.Component {
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
+      hasTrunfo,
     } = this.props;
     return (
       <>
@@ -72,13 +72,15 @@ class Form extends React.Component {
           <option value="raro">Raro</option>
           <option value="muito raro">Muito Raro</option>
         </select>
-        <input
-          name="Trunfo"
-          type="checkbox"
-          data-testid="trunfo-input"
-          checked={ cardTrunfo }
-          onClick={ onInputChange }
-        />
+        {
+          !hasTrunfo ? (<input
+            name="Trunfo"
+            type="checkbox"
+            data-testid="trunfo-input"
+            checked={ cardTrunfo }
+            onClick={ onInputChange }
+          />) : <p>Você já tem um Super Trunfo em seu baralho</p>
+        }
         <button
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
@@ -103,6 +105,7 @@ Form.propTypes = {
   isSaveButtonDisabled: propTypes.bool.isRequired,
   onInputChange: propTypes.func.isRequired,
   onSaveButtonClick: propTypes.func.isRequired,
+  hasTrunfo: propTypes.bool.isRequired,
 };
 
 export default Form;
