@@ -4,7 +4,7 @@ import Card from './Card';
 
 class Deck extends React.Component {
   render() {
-    const { allCards } = this.props;
+    const { allCards, deleteFunc } = this.props;
     return (
       <div>
         {
@@ -29,6 +29,8 @@ class Deck extends React.Component {
               cardImage={ Image }
               cardRare={ Rarity }
               cardTrunfo={ Trunfo }
+              deleteBtn={ deleteFunc }
+              isPreview={ false }
             />))
         }
       </div>);
@@ -37,6 +39,7 @@ class Deck extends React.Component {
 
 Deck.propTypes = {
   allCards: propTypes.arrayOf(Object).isRequired,
+  deleteFunc: propTypes.func.isRequired,
 };
 
 export default Deck;
