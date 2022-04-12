@@ -26,6 +26,7 @@ class Form extends React.Component {
           changeFunc={ onInputChange }
           inputType="text"
           testId="name-input"
+          labelText="Nome da carta:"
         />
         <GenericImput
           inputName="Description"
@@ -33,6 +34,7 @@ class Form extends React.Component {
           changeFunc={ onInputChange }
           inputType="textarea"
           testId="description-input"
+          labelText="Descrição da carta:"
         />
         <GenericImput
           inputName="Attr1"
@@ -40,6 +42,7 @@ class Form extends React.Component {
           changeFunc={ onInputChange }
           inputType="number"
           testId="attr1-input"
+          labelText="Atributo 1:"
         />
         <GenericImput
           inputName="Attr2"
@@ -47,6 +50,7 @@ class Form extends React.Component {
           changeFunc={ onInputChange }
           inputType="number"
           testId="attr2-input"
+          labelText="Atributo 2:"
         />
         <GenericImput
           inputName="Attr3"
@@ -54,6 +58,7 @@ class Form extends React.Component {
           changeFunc={ onInputChange }
           inputType="number"
           testId="attr3-input"
+          labelText="Atributo 3:"
         />
         <GenericImput
           inputName="Image"
@@ -61,25 +66,32 @@ class Form extends React.Component {
           changeFunc={ onInputChange }
           inputType="text"
           testId="image-input"
+          labelText="URL da imagem:"
         />
-        <select
-          name="Rarity"
-          data-testid="rare-input"
-          value={ cardRare }
-          onChange={ onInputChange }
-        >
-          <option value="normal">Normal</option>
-          <option value="raro">Raro</option>
-          <option value="muito raro">Muito Raro</option>
-        </select>
+        <label htmlFor="Rarity">
+          Selecione a Raridade:
+          <select
+            name="Rarity"
+            data-testid="rare-input"
+            value={ cardRare }
+            onChange={ onInputChange }
+          >
+            <option value="normal">Normal</option>
+            <option value="raro">Raro</option>
+            <option value="muito raro">Muito Raro</option>
+          </select>
+        </label>
         {
-          !hasTrunfo ? (<input
-            name="Trunfo"
-            type="checkbox"
-            data-testid="trunfo-input"
-            checked={ cardTrunfo }
-            onClick={ onInputChange }
-          />) : <p>Você já tem um Super Trunfo em seu baralho</p>
+          !hasTrunfo ? (
+            <label htmlFor="Trunfo">
+              <input
+                name="Trunfo"
+                type="checkbox"
+                data-testid="trunfo-input"
+                checked={ cardTrunfo }
+                onClick={ onInputChange }
+              />
+            </label>) : <p>Você já tem um Super Trunfo em seu baralho</p>
         }
         <button
           disabled={ isSaveButtonDisabled }
