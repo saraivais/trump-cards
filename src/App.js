@@ -19,10 +19,12 @@ class App extends React.Component {
       Rarity: '',
       Trunfo: '',
       ButtonOff: true,
+      createdCards: [],
     };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.checkFormCompletion = this.checkFormCompletion.bind(this);
+    this.xablau = this.xablau.bind(this);
   }
 
   onInputChange({ target }) {
@@ -80,6 +82,42 @@ class App extends React.Component {
   }
 
   xablau() {
+    const {
+      Name,
+      Description,
+      Attr1,
+      Attr2,
+      Attr3,
+      Image,
+      Rarity,
+      Trunfo,
+      createdCards,
+    } = this.state;
+
+    const newCard = {
+      Name,
+      Description,
+      Attr1,
+      Attr2,
+      Attr3,
+      Image,
+      Rarity,
+      Trunfo,
+    };
+
+    this.setState({
+      createdCards: [...createdCards, newCard],
+      Name: '',
+      Description: '',
+      Attr1: '',
+      Attr2: '',
+      Attr3: '',
+      Image: '',
+      Rarity: '',
+      Trunfo: '',
+    });
+    // guardar as info em um objeto dentro de um array~
+    // resetar tudo;
   }
 
   render() {
@@ -108,7 +146,7 @@ class App extends React.Component {
           cardTrunfo={ Trunfo }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ ButtonOff }
-          onSaveButtonClick={ this.xablau() }
+          onSaveButtonClick={ () => this.xablau() }
         />
         <Card
           cardName={ Name }
