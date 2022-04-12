@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Deck from './components/Deck';
 
 const maxSum = 210;
 const maxAttr = 90;
@@ -130,6 +131,7 @@ class App extends React.Component {
       Trunfo,
       ButtonOff,
       hasTrunfo,
+      createdCards,
     } = this.state;
     return (
       <div>
@@ -158,6 +160,7 @@ class App extends React.Component {
           cardRare={ Rarity }
           cardTrunfo={ Trunfo }
         />
+        <Deck allCards={ createdCards } />
       </div>
     );
   }
