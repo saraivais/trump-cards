@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import GenericImput from './GenericImput';
+import GenericInput from './GenericInput';
 
 class Form extends React.Component {
   render() {
@@ -20,7 +20,7 @@ class Form extends React.Component {
     } = this.props;
     return (
       <>
-        <GenericImput
+        <GenericInput
           inputName="Name"
           valueShown={ cardName }
           changeFunc={ onInputChange }
@@ -28,7 +28,7 @@ class Form extends React.Component {
           testId="name-input"
           labelText="Nome da carta:"
         />
-        <GenericImput
+        <GenericInput
           inputName="Description"
           valueShown={ cardDescription }
           changeFunc={ onInputChange }
@@ -36,7 +36,7 @@ class Form extends React.Component {
           testId="description-input"
           labelText="Descrição da carta:"
         />
-        <GenericImput
+        <GenericInput
           inputName="Attr1"
           valueShown={ cardAttr1 }
           changeFunc={ onInputChange }
@@ -44,7 +44,7 @@ class Form extends React.Component {
           testId="attr1-input"
           labelText="Atributo 1:"
         />
-        <GenericImput
+        <GenericInput
           inputName="Attr2"
           valueShown={ cardAttr2 }
           changeFunc={ onInputChange }
@@ -52,7 +52,7 @@ class Form extends React.Component {
           testId="attr2-input"
           labelText="Atributo 2:"
         />
-        <GenericImput
+        <GenericInput
           inputName="Attr3"
           valueShown={ cardAttr3 }
           changeFunc={ onInputChange }
@@ -60,7 +60,7 @@ class Form extends React.Component {
           testId="attr3-input"
           labelText="Atributo 3:"
         />
-        <GenericImput
+        <GenericInput
           inputName="Image"
           valueShown={ cardImage }
           changeFunc={ onInputChange }
