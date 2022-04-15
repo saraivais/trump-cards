@@ -1,12 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import Card from './Card';
+import './Deck.css';
 
 class Deck extends React.Component {
   render() {
     const { allCards, deleteFunc } = this.props;
     return (
-      <div>
+      <div className="my-deck">
         {
           allCards.map((
             {
