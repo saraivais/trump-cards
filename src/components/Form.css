@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-form {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-rar {
+  color: red;
+}
+
+.label {
+  color: white;
+}
+
+.trunfo-box {
+  background-color: red;
+}
+
+.already-trunfo {
+  color: yellow;
+}
+
+.save-btn {
+  background-color: chartreuse;
+}
