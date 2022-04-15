@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background-color: pink;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  width: 300px;
+}
+
+.top-side {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-side {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.trunfo {
+  background-color: blueviolet;
+}
+
+.delete-btn {
+  background-color: greenyellow;
+}
