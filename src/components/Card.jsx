@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import './Card.css';
 
 class Card extends React.Component {
   render() {
@@ -17,26 +18,33 @@ class Card extends React.Component {
     } = this.props;
 
     return (
-      <div>
-        <div>
+      <div className="card">
+        <div className="top-side">
           <p data-testid="name-card">{cardName}</p>
           <img src={ cardImage } alt={ cardName } data-testid="image-card" />
           <p data-testid="description-card">{ cardDescription }</p>
         </div>
-        <div>
+        <div className="bottom-side">
           <p data-testid="attr1-card">{ cardAttr1 }</p>
           <p data-testid="attr2-card">{ cardAttr2 }</p>
           <p data-testid="attr3-card">{ cardAttr3 }</p>
           <p data-testid="rare-card">{ cardRare }</p>
           {
             cardTrunfo === true
-              ? <div data-testid="trunfo-card">Super Trunfo</div> : <div />
+              ? (
+                <div
+                  className="trunfo"
+                  data-testid="trunfo-card"
+                >
+                  Super Trunfo
+                </div>) : <div />
           }
           {
             isPreview === true
               ? null
               : (
                 <button
+                  className="delete-btn"
                   type="button"
                   data-testid="delete-button"
                   onClick={ () => deleteBtn(cardName) }
