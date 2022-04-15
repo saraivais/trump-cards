@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import GenericInput from './GenericInput';
+import './Form.css';
 
 class Form extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class Form extends React.Component {
       hasTrunfo,
     } = this.props;
     return (
-      <>
+      <div className="entry-form">
         <GenericInput
           inputName="Name"
           valueShown={ cardName }
@@ -68,9 +69,10 @@ class Form extends React.Component {
           testId="image-input"
           labelText="URL da imagem:"
         />
-        <label htmlFor="Rarity">
+        <label className="label" htmlFor="Rarity">
           Selecione a Raridade:
           <select
+            className="select-rar"
             name="Rarity"
             data-testid="rare-input"
             value={ cardRare }
@@ -83,17 +85,27 @@ class Form extends React.Component {
         </label>
         {
           !hasTrunfo ? (
-            <label htmlFor="Trunfo">
+            <label className="label" htmlFor="Trunfo">
+              Super Trunfo
               <input
+                className="trunfo-box"
                 name="Trunfo"
                 type="checkbox"
                 data-testid="trunfo-input"
                 checked={ cardTrunfo }
                 onClick={ onInputChange }
               />
-            </label>) : <p>Você já tem um Super Trunfo em seu baralho</p>
+            </label>)
+            : (
+              <p
+                className="already-trunfo"
+              >
+                Você já tem um Super Trunfo em seu baralho
+
+              </p>)
         }
         <button
+          className="save-btn"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
           type="button"
@@ -101,7 +113,7 @@ class Form extends React.Component {
         >
           Salvar
         </button>
-      </>);
+      </div>);
   }
 }
 
