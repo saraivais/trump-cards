@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.label {
+  background-color: blue;
+  color: white;
+}
+
+.gen-input {
+  border-radius: 10px;
+}
