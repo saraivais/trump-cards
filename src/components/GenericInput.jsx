@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import './GenericInput.css';
 
 class GenericInput extends React.Component {
   render() {
@@ -12,9 +13,10 @@ class GenericInput extends React.Component {
       labelText,
     } = this.props;
     return (
-      <label htmlFor={ inputName }>
+      <label className="label" htmlFor={ inputName }>
         { labelText }
         <input
+          className="gen-input"
           name={ inputName }
           type={ inputType }
           value={ valueShown }
