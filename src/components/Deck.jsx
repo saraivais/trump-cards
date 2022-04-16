@@ -2,7 +2,6 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Card from './Card';
 import './Deck.css';
-import FilterInput from './FilterInput';
 
 class Deck extends React.Component {
   constructor() {
@@ -31,15 +30,17 @@ class Deck extends React.Component {
     return (
       <div>
         <div className="my-filters">
-          <h1>Filtros</h1>
-          <FilterInput
-            disabled={ TrunfoFilter }
-            inputValue={ nameFilter }
-            inputName="nameFilter"
-            placeHolder="Nome da Carta"
-            testId="name-filter"
-            changeFunc={ this.onInputChange }
-          />
+          <h1 className="filters-title">Filtros</h1>
+          <label htmlFor="nameFilter">
+            <input
+              value={ nameFilter }
+              type="text"
+              name="nameFilter"
+              placeholder="Nome da Carta"
+              data-testid="name-filter"
+              onChange={ this.onInputChange }
+            />
+          </label>
           <label htmlFor="rarityFilter">
             <select
               disabled={ TrunfoFilter }
