@@ -10,14 +10,15 @@ class Deck extends React.Component {
     this.state = {
       nameFilter: '',
       rarityFilter: '',
-      // TrunfoFilter: '',
+      TrunfoFilter: false,
     };
 
     this.onInputChange = this.onInputChange.bind(this);
   }
 
   onInputChange({ target }) {
-    const { value, name } = target;
+    const { name } = target;
+    const value = (target.type === 'checkbox') ? target.checked : target.value;
     this.setState({
       [name]: value,
     });
@@ -25,13 +26,14 @@ class Deck extends React.Component {
 
   render() {
     const { allCards, deleteFunc } = this.props;
-    const { nameFilter, rarityFilter } = this.state;
+    const { nameFilter, rarityFilter, TrunfoFilter } = this.state;
 
     return (
       <div>
         <div className="my-filters">
           <h1>Filtros</h1>
           <FilterInput
+            disabled={ TrunfoFilter }
             inputValue={ nameFilter }
             inputName="nameFilter"
             placeHolder="Nome da Carta"
@@ -40,6 +42,7 @@ class Deck extends React.Component {
           />
           <label htmlFor="rarityFilter">
             <select
+              disabled={ TrunfoFilter }
               data-testid="rare-filter"
               name="rarityFilter"
               onChange={ this.onInputChange }
@@ -50,15 +53,34 @@ class Deck extends React.Component {
               <option value="muito raro">Muito Raro</option>
             </select>
           </label>
+          <label htmlFor="TrunfoFilter">
+            Super Trunfo
+            <input
+              type="checkbox"
+              name="TrunfoFilter"
+              data-testid="trunfo-filter"
+              onChange={ this.onInputChange }
+            />
+          </label>
         </div>
         <div className="my-deck">
           {
             allCards
               .filter((card) => {
-                if (rarityFilter === 'todas' || rarityFilter === '') { return card; }
+                if (rarityFilter === 'todas' || rarityFilter === ''
+                || TrunfoFilter === true) { return card; }
                 return card.Rarity === rarityFilter;
               })
-              .filter(({ Name }) => Name.includes(nameFilter)) // trunfoflter !== false~
+              .filter((cardi) => {
+                if (TrunfoFilter === true) return cardi;
+                return cardi.Name.includes(nameFilter);
+              }) // trunfoflter !== false~
+              .filter((cardie) => {
+                if (TrunfoFilter) {
+                  return cardie.Trunfo === true;
+                }
+                return cardie;
+              })
               .map((
                 {
                   Name,
