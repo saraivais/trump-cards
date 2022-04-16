@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import Card from './Card';
-import './Deck.css';
+import '../style/Deck.css';
 
 class Deck extends React.Component {
   constructor() {

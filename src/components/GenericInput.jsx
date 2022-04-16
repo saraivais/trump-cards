@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import './GenericInput.css';
+import '../style/GenericInput.css';
 
 class GenericInput extends React.Component {
   render() {
