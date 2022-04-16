@@ -5,24 +5,56 @@
 }
 
 .card {
-  background-color: pink;
+  align-items: center;
+  background-color: rgb(32, 32, 32);
   border: 1px solid black;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  height: 350px;
+  justify-content: space-between;
   margin: 5px;
+  overflow: hidden;
   width: 300px;
 }
 
 .top-side {
-  border: 1px solid red;
+  align-items: center;
   display: flex;
   flex-direction: column;
 }
 
+.card-name {
+  background-color: white;
+  border-radius: 16px;
+  margin: 5px;
+  text-align: center;
+  width: 75%;
+}
+
+.card-img {
+  width: 80%;
+}
+
+.card-description {
+  background-color: aliceblue;
+  text-align: center;
+}
+
 .bottom-side {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
+}
+
+.card-attr {
+  background-color: aliceblue;
+  border-radius: 16px;
+  margin: 5px 0;
+}
+
+.card-rarity {
+  background-color: aliceblue;
+  border-radius: 16px;
 }
 
 .trunfo {
