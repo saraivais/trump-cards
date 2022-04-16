@@ -31,8 +31,9 @@ class Deck extends React.Component {
       <div>
         <div className="my-filters">
           <h1 className="filters-title">Filtros</h1>
-          <label htmlFor="nameFilter">
+          <label className="filter-labels" htmlFor="nameFilter">
             <input
+              className="filter-inputs"
               value={ nameFilter }
               type="text"
               name="nameFilter"
@@ -41,8 +42,9 @@ class Deck extends React.Component {
               onChange={ this.onInputChange }
             />
           </label>
-          <label htmlFor="rarityFilter">
+          <label className="filter-labels" htmlFor="rarityFilter">
             <select
+              className="filter-inputs"
               disabled={ TrunfoFilter }
               data-testid="rare-filter"
               name="rarityFilter"
@@ -54,7 +56,7 @@ class Deck extends React.Component {
               <option value="muito raro">Muito Raro</option>
             </select>
           </label>
-          <label htmlFor="TrunfoFilter">
+          <label className="filter-labels" htmlFor="TrunfoFilter">
             Super Trunfo
             <input
               type="checkbox"
