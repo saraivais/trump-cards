@@ -9,7 +9,7 @@ class Deck extends React.Component {
     super();
     this.state = {
       nameFilter: '',
-      // rarityFilter: '',
+      rarityFilter: '',
       // TrunfoFilter: '',
     };
 
@@ -25,7 +25,7 @@ class Deck extends React.Component {
 
   render() {
     const { allCards, deleteFunc } = this.props;
-    const { nameFilter } = this.state;
+    const { nameFilter, rarityFilter } = this.state;
 
     return (
       <div>
@@ -38,11 +38,27 @@ class Deck extends React.Component {
             testId="name-filter"
             changeFunc={ this.onInputChange }
           />
+          <label htmlFor="rarityFilter">
+            <select
+              data-testid="rare-filter"
+              name="rarityFilter"
+              onChange={ this.onInputChange }
+            >
+              <option value="todas">Todas</option>
+              <option value="normal">Normal</option>
+              <option value="raro">Raro</option>
+              <option value="muito raro">Muito Raro</option>
+            </select>
+          </label>
         </div>
         <div className="my-deck">
           {
             allCards
-              .filter(({ Name }) => Name.includes(nameFilter))
+              .filter((card) => {
+                if (rarityFilter === 'todas' || rarityFilter === '') { return card; }
+                return card.Rarity === rarityFilter;
+              })
+              .filter(({ Name }) => Name.includes(nameFilter)) // trunfoflter !== false~
               .map((
                 {
                   Name,
