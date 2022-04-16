@@ -20,15 +20,25 @@ class Card extends React.Component {
     return (
       <div className="card">
         <div className="top-side">
-          <p data-testid="name-card">{cardName}</p>
-          <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-          <p data-testid="description-card">{ cardDescription }</p>
+          <p className="card-name" data-testid="name-card">{cardName}</p>
+          <img
+            className="card-img"
+            src={ cardImage }
+            alt={ cardName }
+            data-testid="image-card"
+          />
+          <p
+            className="card-description"
+            data-testid="description-card"
+          >
+            { cardDescription }
+          </p>
         </div>
         <div className="bottom-side">
-          <p data-testid="attr1-card">{ cardAttr1 }</p>
-          <p data-testid="attr2-card">{ cardAttr2 }</p>
-          <p data-testid="attr3-card">{ cardAttr3 }</p>
-          <p data-testid="rare-card">{ cardRare }</p>
+          <p className="card-attr" data-testid="attr1-card">{ cardAttr1 }</p>
+          <p className="card-attr" data-testid="attr2-card">{ cardAttr2 }</p>
+          <p className="card-attr" data-testid="attr3-card">{ cardAttr3 }</p>
+          <p className="card-rarity" data-testid="rare-card">{ cardRare }</p>
           {
             cardTrunfo === true
               ? (
@@ -37,7 +47,7 @@ class Card extends React.Component {
                   data-testid="trunfo-card"
                 >
                   Super Trunfo
-                </div>) : <div />
+                </div>) : null
           }
           {
             isPreview === true

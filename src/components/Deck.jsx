@@ -77,7 +77,7 @@ class Deck extends React.Component {
               .filter((cardi) => {
                 if (TrunfoFilter === true) return cardi;
                 return cardi.Name.includes(nameFilter);
-              }) // trunfoflter !== false~
+              })
               .filter((cardie) => {
                 if (TrunfoFilter) {
                   return cardie.Trunfo === true;
