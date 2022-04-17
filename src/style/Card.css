@@ -6,16 +6,16 @@
 
 .card {
   align-items: center;
-  background-color: rgb(32, 32, 32);
-  border: 1px solid black;
+  background-color: rgb(240, 226, 147);
+  box-shadow: 4px 4px 2px rgb(41, 34, 10);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 350px;
   justify-content: space-between;
-  margin: 5px;
+  margin: 15px;
   overflow: hidden;
-  width: 300px;
+  padding: 5px;
+  width: 280px;
 }
 
 .top-side {
@@ -28,39 +28,79 @@
   background-color: white;
   border-radius: 16px;
   margin: 5px;
+  padding: 3px;
   text-align: center;
   width: 75%;
 }
 
 .card-img {
-  width: 80%;
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 150px;
+  margin: 5px;
+  object-fit: cover;
+  width: 200px;
 }
 
 .card-description {
   background-color: aliceblue;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 5px;
   text-align: center;
+  width: 85%;
 }
 
 .bottom-side {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .card-attr {
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   border-radius: 16px;
   margin: 5px 0;
+  padding: 2px 8px;
+  text-align: center;
+  width: 180px;
 }
 
 .card-rarity {
-  background-color: aliceblue;
+  background-color: rgb(233, 238, 243);
   border-radius: 16px;
+  margin: 5px 0;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .trunfo {
-  background-color: blueviolet;
+  position: relative;
+  visibility: hidden;
+}
+
+.trunfo:after {
+  background-color: rgb(5, 109, 207);
+  background-image: url('../images/crown.png');
+  background-repeat: no-repeat;
+  background-size: 50px 40px;
+  border-radius: 50%;
+  content: ' ';
+  height: 50px;
+  left: 150px;
+  position: absolute;
+  top: 0;
+  visibility: visible;
+  width: 50px;
 }
 
 .delete-btn {
-  background-color: greenyellow;
+  background-color: rgb(8, 41, 102);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 80px;
+  margin: 5px;
+  padding: 5px;
 }

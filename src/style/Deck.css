@@ -7,4 +7,5 @@
 .my-deck {
   background-color: beige;
   display: flex;
+  flex-wrap: wrap;
 }
