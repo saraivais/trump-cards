@@ -1,16 +1,27 @@
-# 🚧 README em construção 🚧
+<h1 align="center">TRUMP CARDS 🏆</h1>
 
-<!-- Olá, Tryber!
+## English 🇬🇧
+<details>
+  <summary>Click to expand!</summary>
+  
+### Description 📝
+[Trybe](https://www.betrybe.com/)
+### Technologies and Tools 🔧
+### Installation 📋
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+### You can find this project [here]()!
 
-É essencial que você preencha esse documento por conta própria, ok?
+</details>
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+## Português 🇧🇷
+<details>
+  <summary>Clique para expandir!</summary>
+  
+### Descrição 📝
+[Trybe](https://www.betrybe.com/)
+### Tecnologias e Ferramentas 🔧
+### Instalação 📋
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+### Você pode encontrar este projeto [aqui]()!
 
--->
+</details>
