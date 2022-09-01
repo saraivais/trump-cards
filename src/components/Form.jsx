@@ -40,21 +40,21 @@ class Form extends React.Component {
           valueShown={ cardAttr1 }
           changeFunc={ onInputChange }
           inputType="number"
-          labelText="Atributo 1:"
+          labelText="Força:"
         />
         <GenericInput
           inputName="Attr2"
           valueShown={ cardAttr2 }
           changeFunc={ onInputChange }
           inputType="number"
-          labelText="Atributo 2:"
+          labelText="Inteligência:"
         />
         <GenericInput
           inputName="Attr3"
           valueShown={ cardAttr3 }
           changeFunc={ onInputChange }
           inputType="number"
-          labelText="Atributo 3:"
+          labelText="Poder:"
         />
         <GenericInput
           inputName="Image"
