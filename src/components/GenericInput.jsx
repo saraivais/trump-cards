@@ -7,7 +7,6 @@ class GenericInput extends React.Component {
     const {
       inputName,
       inputType,
-      testId,
       valueShown,
       changeFunc,
       labelText,
@@ -21,7 +20,6 @@ class GenericInput extends React.Component {
           type={ inputType }
           value={ valueShown }
           onChange={ changeFunc }
-          data-testid={ testId }
         />
       </label>);
   }
@@ -30,7 +28,6 @@ class GenericInput extends React.Component {
 GenericInput.propTypes = {
   inputName: propTypes.string.isRequired,
   inputType: propTypes.string.isRequired,
-  testId: propTypes.string.isRequired,
   valueShown: propTypes.string.isRequired,
   changeFunc: propTypes.func.isRequired,
   labelText: propTypes.string.isRequired,
