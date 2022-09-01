@@ -1,24 +1,11 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .main-title {
   color: blue;
 }
 
 .main {
-  background-color: blanchedalmond;
-  border: 1px solid black;
-  display: flex;
-  padding: 10px;
+  background-color: red;
 }
 
 .form-and-preview {
-  background-color: lightpink;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+  
 }
