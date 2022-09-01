@@ -37,27 +37,29 @@ class Card extends React.Component {
           <p className="card-attr">{ cardAttr2 }</p>
           <p className="card-attr">{ cardAttr3 }</p>
           <p className="card-rarity">{ cardRare }</p>
-          {
-            cardTrunfo === true
-              ? (
-                <div
-                  className="trunfo"
-                >
-                  Super Trunfo
-                </div>) : null
-          }
-          {
-            isPreview === true
-              ? null
-              : (
-                <button
-                  className="delete-btn"
-                  type="button"
-                  onClick={ () => deleteBtn(cardName) }
-                >
-                  Excluir
-                </button>)
-          }
+          <div className="trump-and-exclude">
+            {
+              cardTrunfo === true
+                ? (
+                  <div
+                    className="trunfo"
+                  >
+                    Super Trunfo
+                  </div>) : null
+            }
+            {
+              isPreview === true
+                ? null
+                : (
+                  <button
+                    className="delete-btn"
+                    type="button"
+                    onClick={ () => deleteBtn(cardName) }
+                  >
+                    Excluir
+                  </button>)
+            }
+          </div>
         </div>
       </div>);
   }
