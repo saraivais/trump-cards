@@ -1,11 +1,48 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.deck-container {
+  display: flex;
+  flex-direction: column;
+  overflow: none;
+  width: 100%;
+}
+
+.my-filters {
+  align-items: center;
+  background-color: rgb(171, 22, 22);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.filters-title {
+  background-color: rgb(171, 22, 22);
+  color: #E3AE3A;
+  font-family: Bree Serif , serif;
+  font-size: 1.8em;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgb(255, 18, 18);
+}
+
+.filter-labels {
+  color: white;
+  font-family: Bree Serif , serif;
+}
+
+.filter-inputs {
+  border: none;
+  border-radius: 10px;
+  font-family: Bree Serif , serif;
+  margin: 2px 5px;
+  padding: 2px 8px;
 }
 
 .my-deck {
-  background-color: beige;
+  align-items: center;
+  background-color: rgb(242, 229, 201);
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
 }

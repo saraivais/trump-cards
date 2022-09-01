@@ -28,25 +28,25 @@ class Deck extends React.Component {
     const { nameFilter, rarityFilter, TrunfoFilter } = this.state;
 
     return (
-      <div>
+      <div className="deck-container">
+        <h1 className="filters-title">Filtros:</h1>
         <div className="my-filters">
-          <h1 className="filters-title">Filtros</h1>
           <label className="filter-labels" htmlFor="nameFilter">
+            Nome:
             <input
               className="filter-inputs"
               value={ nameFilter }
               type="text"
               name="nameFilter"
               placeholder="Nome da Carta"
-              data-testid="name-filter"
               onChange={ this.onInputChange }
             />
           </label>
           <label className="filter-labels" htmlFor="rarityFilter">
+            Raridade:
             <select
               className="filter-inputs"
               disabled={ TrunfoFilter }
-              data-testid="rare-filter"
               name="rarityFilter"
               onChange={ this.onInputChange }
             >
@@ -59,9 +59,9 @@ class Deck extends React.Component {
           <label className="filter-labels" htmlFor="TrunfoFilter">
             Super Trunfo
             <input
+              className="filter-inputs"
               type="checkbox"
               name="TrunfoFilter"
-              data-testid="trunfo-filter"
               onChange={ this.onInputChange }
             />
           </label>

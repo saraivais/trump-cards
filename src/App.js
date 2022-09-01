@@ -2,6 +2,9 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import Deck from './components/Deck';
+import trophy from './icons/trophy-svgrepo-com.svg';
+import github from './icons/github.svg';
+import linkedin from './icons/linkedin.svg';
 import './style/App.css';
 
 class App extends React.Component {
@@ -154,7 +157,18 @@ class App extends React.Component {
     } = this.state;
     return (
       <>
-        <h1 className="main-title">Tryunfo</h1>
+        <header className="page-header">
+          <img className="header-icon" src={ trophy } alt="trophy-icon" />
+          <h1 className="main-title">Trump Cards</h1>
+          <div>
+            <a href="https://github.com/saraivais" target="_blank" rel="noreferrer">
+              <img className="soc-media-icon" src={ github } alt="github-icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/isadorasaraiva/" target="_blank" rel="noreferrer">
+              <img className="soc-media-icon" src={ linkedin } alt="linkedin-icon" />
+            </a>
+          </div>
+        </header>
         <div className="main">
           <div className="form-and-preview">
             <Form
@@ -171,18 +185,20 @@ class App extends React.Component {
               isSaveButtonDisabled={ ButtonOff }
               onSaveButtonClick={ () => this.saveCard() }
             />
-            <Card
-              cardName={ Name }
-              cardDescription={ Description }
-              cardAttr1={ Attr1 }
-              cardAttr2={ Attr2 }
-              cardAttr3={ Attr3 }
-              cardImage={ Image }
-              cardRare={ Rarity }
-              cardTrunfo={ Trunfo }
-              isPreview
-              deleteBtn={ this.deleteCard }
-            />
+            <div className="card-preview">
+              <Card
+                cardName={ Name }
+                cardDescription={ Description }
+                cardAttr1={ Attr1 }
+                cardAttr2={ Attr2 }
+                cardAttr3={ Attr3 }
+                cardImage={ Image }
+                cardRare={ Rarity }
+                cardTrunfo={ Trunfo }
+                isPreview
+                deleteBtn={ this.deleteCard }
+              />
+            </div>
           </div>
           <Deck deleteFunc={ this.deleteCard } allCards={ createdCards } />
         </div>

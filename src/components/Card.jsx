@@ -20,48 +20,46 @@ class Card extends React.Component {
     return (
       <div className="card">
         <div className="top-side">
-          <p className="card-name" data-testid="name-card">{cardName}</p>
+          <p className="card-name">{cardName}</p>
           <img
             className="card-img"
             src={ cardImage }
             alt={ cardName }
-            data-testid="image-card"
           />
           <p
             className="card-description"
-            data-testid="description-card"
           >
             { cardDescription }
           </p>
         </div>
         <div className="bottom-side">
-          <p className="card-attr" data-testid="attr1-card">{ cardAttr1 }</p>
-          <p className="card-attr" data-testid="attr2-card">{ cardAttr2 }</p>
-          <p className="card-attr" data-testid="attr3-card">{ cardAttr3 }</p>
-          <p className="card-rarity" data-testid="rare-card">{ cardRare }</p>
-          {
-            cardTrunfo === true
-              ? (
-                <div
-                  className="trunfo"
-                  data-testid="trunfo-card"
-                >
-                  Super Trunfo
-                </div>) : null
-          }
-          {
-            isPreview === true
-              ? null
-              : (
-                <button
-                  className="delete-btn"
-                  type="button"
-                  data-testid="delete-button"
-                  onClick={ () => deleteBtn(cardName) }
-                >
-                  Excluir
-                </button>)
-          }
+          <p className="card-attr">{ cardAttr1 }</p>
+          <p className="card-attr">{ cardAttr2 }</p>
+          <p className="card-attr">{ cardAttr3 }</p>
+          <p className="card-rarity">{ cardRare }</p>
+          <div className="trump-and-exclude">
+            {
+              cardTrunfo === true
+                ? (
+                  <div
+                    className="trunfo"
+                  >
+                    Super Trunfo
+                  </div>) : null
+            }
+            {
+              isPreview === true
+                ? null
+                : (
+                  <button
+                    className="delete-btn"
+                    type="button"
+                    onClick={ () => deleteBtn(cardName) }
+                  >
+                    Excluir
+                  </button>)
+            }
+          </div>
         </div>
       </div>);
   }

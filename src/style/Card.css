@@ -1,16 +1,12 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .card {
   align-items: center;
-  background-color: rgb(240, 226, 147);
-  box-shadow: 4px 4px 2px rgb(41, 34, 10);
+  background-color: rgb(227, 174, 58);
   border-radius: 10px;
+  box-shadow: 4px 4px 2px rgba(51, 19, 0, 0.7);
   display: flex;
   flex-direction: column;
+  font-family: Bree Serif , serif;
+  height: 400px;
   justify-content: space-between;
   margin: 15px;
   overflow: hidden;
@@ -27,6 +23,7 @@
 .card-name {
   background-color: white;
   border-radius: 16px;
+  font-family: Bangers , cursive;
   margin: 5px;
   padding: 3px;
   text-align: center;
@@ -34,21 +31,23 @@
 }
 
 .card-img {
-  border: 2px solid white;
+  border: 2px solid rgb(171, 22, 22);
   border-radius: 10px;
-  height: 150px;
-  margin: 5px;
+  height: 120px;
+  margin: 1px;
   object-fit: cover;
-  width: 200px;
+  width: 260px;
 }
 
 .card-description {
   background-color: aliceblue;
   border-radius: 8px;
+  font-size: 0.7em;
   margin: 5px;
   padding: 5px;
   text-align: center;
-  width: 85%;
+  width: 260px;
+  word-wrap: break-word;
 }
 
 .bottom-side {
@@ -58,9 +57,10 @@
 }
 
 .card-attr {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 16px;
-  margin: 5px 0;
+  color: rgb(171, 22, 22);
+  margin: 2px 0;
   padding: 2px 8px;
   text-align: center;
   width: 180px;
@@ -69,38 +69,35 @@
 .card-rarity {
   background-color: rgb(233, 238, 243);
   border-radius: 16px;
+  font-family: Bangers , cursive;
   margin: 5px 0;
   padding: 2px 8px;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
+}
+
+.trump-and-exclude {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .trunfo {
-  position: relative;
-  visibility: hidden;
-}
-
-.trunfo:after {
-  background-color: rgb(5, 109, 207);
-  background-image: url('../images/crown.png');
-  background-repeat: no-repeat;
-  background-size: 50px 40px;
-  border-radius: 50%;
-  content: ' ';
-  height: 50px;
-  left: 150px;
-  position: absolute;
-  top: 0;
-  visibility: visible;
-  width: 50px;
+  background-color: rgb(242, 229, 201);
+  border-radius: 8px;
+  color: rgb(171, 22, 22);
+  font-family: Bangers , cursive;
+  padding: 5px;
 }
 
 .delete-btn {
-  background-color: rgb(8, 41, 102);
-  color: white;
+  background-color: rgb(171, 22, 22);
   border: none;
   border-radius: 8px;
-  width: 80px;
+  color: rgb(242, 229, 201);
+  font-family: Bangers , cursive;
   margin: 5px;
   padding: 5px;
+  width: 80px;
 }
