@@ -1,5 +1,9 @@
 <h1 align="center">TRUMP CARDS 🏆</h1>
 
+![image](https://user-images.githubusercontent.com/96205316/188023822-87d0b15d-944f-4b8a-86aa-71cc464b2334.png)
+
+<p align="center">https://trump-cards.vercel.app/</p>
+
 ## English 🇬🇧
 <details>
   <summary>Click to expand!</summary>
@@ -39,7 +43,7 @@ Trump Cards was developed using **JavaScript** and the **React** library. The ob
   http://localhost:3000
 ```
 
-### You can find this project [here]()!
+### You can find this project [here](https://trump-cards.vercel.app/)!
 
 </details>
 
@@ -82,6 +86,6 @@ Trump Cards foi desenvolvido usando **JavaScript** e a biblioteca **React**. O o
   http://localhost:3000
 ```
 
-### Você pode encontrar este projeto [aqui]()!
+### Você pode encontrar este projeto [aqui](https://trump-cards.vercel.app/)!
 
 </details>
