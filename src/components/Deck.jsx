@@ -38,7 +38,6 @@ class Deck extends React.Component {
               type="text"
               name="nameFilter"
               placeholder="Nome da Carta"
-              data-testid="name-filter"
               onChange={ this.onInputChange }
             />
           </label>
@@ -46,7 +45,6 @@ class Deck extends React.Component {
             <select
               className="filter-inputs"
               disabled={ TrunfoFilter }
-              data-testid="rare-filter"
               name="rarityFilter"
               onChange={ this.onInputChange }
             >
@@ -61,7 +59,6 @@ class Deck extends React.Component {
             <input
               type="checkbox"
               name="TrunfoFilter"
-              data-testid="trunfo-filter"
               onChange={ this.onInputChange }
             />
           </label>
