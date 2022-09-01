@@ -185,18 +185,20 @@ class App extends React.Component {
               isSaveButtonDisabled={ ButtonOff }
               onSaveButtonClick={ () => this.saveCard() }
             />
-            <Card
-              cardName={ Name }
-              cardDescription={ Description }
-              cardAttr1={ Attr1 }
-              cardAttr2={ Attr2 }
-              cardAttr3={ Attr3 }
-              cardImage={ Image }
-              cardRare={ Rarity }
-              cardTrunfo={ Trunfo }
-              isPreview
-              deleteBtn={ this.deleteCard }
-            />
+            <div className="card-preview">
+              <Card
+                cardName={ Name }
+                cardDescription={ Description }
+                cardAttr1={ Attr1 }
+                cardAttr2={ Attr2 }
+                cardAttr3={ Attr3 }
+                cardImage={ Image }
+                cardRare={ Rarity }
+                cardTrunfo={ Trunfo }
+                isPreview
+                deleteBtn={ this.deleteCard }
+              />
+            </div>
           </div>
           <Deck deleteFunc={ this.deleteCard } allCards={ createdCards } />
         </div>
