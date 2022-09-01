@@ -1,11 +1,51 @@
+.page-header {
+  align-items: center;
+  background-color: rgb(242, 229, 201);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header-icon {
+  height: 60px;
+}
+
+.soc-media-icon {
+  filter: invert(11%)
+    sepia(72%)
+    saturate(5171%)
+    hue-rotate(10deg)
+    brightness(108%)
+    contrast(103%);
+  height: 30px;
+  margin: 0 5px;
+}
+
 .main-title {
-  color: blue;
+  color: rgb(171, 22, 22);
+  font-family: Bangers , cursive;
+  font-size: 3.5em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-shadow: 2px 2px 1px rgb(92, 4, 4);
 }
 
 .main {
-  background-color: red;
+  background-color: rgb(180, 185, 189);
+  display: flex;
 }
 
 .form-and-preview {
-  
 }
+
+/*
+font-family: Bangers, cursive;
+font-family: Rokkitt, serif;
+
+#AB1616
+#E3AE3A
+#F2E5C9
+#B4B9BD
+
+*/
